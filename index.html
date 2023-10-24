@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+   <link rel="stylesheet" media="all" href="port.css"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/e7cca4e1bc.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        function sendEmail(){
+        (function () {
+            emailjs.init('sqbPNgySeq8cYc4BA');
+        })();
+        var params = {
+            name : document.getElementById("name").value,
+            mail : document.getElementById("mail").value,
+            text : document.getElementById("text").value
+        }
+        const serviceId = "service_qb2xrvn";
+        const templateId = "template_9dfytbh";
+let messageele = document.getElementById("message-send");
+        emailjs.send(serviceId,templateId,params).then((res)=>{
+                messageele.textContent = "Message Sent";
+                messageele.style.color = "green"
+                messageele.style.fontSize="30px";
+
+                document.getElementById("name").value = "";
+                document.getElementById("mail").value = "";
+                document.getElementById("text").value = "";
+            setTimeout(function(){
+                messageele.textContent = ""
+            },2000)
+        })
+        .catch((error)=> console.log(error))
+    }
+
+    function changeThemesun(){
+        let backgrouneElement = document.getElementById("total-container");
+        let aboutelement = document.getElementById("about")
+        let abotpara = document.getElementById("paraabout")
+        abotpara.style.color="black";
+        aboutelement.style.backgroundColor ="white"
+        aboutelement.classList.color="black"
+        backgrouneElement.classList.add("lighttheme")
+        backgrouneElement.classList.remove("darktheme")
+        let headerconatiner = document.getElementById("header-contain");
+        headerconatiner.style.backgroundColor = "white";
+        headerconatiner.style.color="black"
+    }
+    function changeThemeMoon(){
+        let backgrouneElement = document.getElementById("total-container");
+        let headerconatiner = document.getElementById("header-contain")
+        let aboutelement = document.getElementById("about")
+        aboutelement.style.backgroundColor="black";
+        headerconatiner.style.backgroundColor="black"
+        headerconatiner.style.color="white"
+        let abotpara = document.getElementById("paraabout")
+        abotpara.style.color="white";
+        aboutelement.style.color="white";
+        backgrouneElement.classList.add("darktheme")
+        backgrouneElement.classList.remove("lighttheme")
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("toggle");
+    const menu = document.querySelector(".header-link");
+
+    menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+});
+
+    </script>
+   
+
+</head>
+<body>
+
+<nav class="header-container fixed-top" id="header-contain">
+    <div class="header-container-inside">
+    <img src="https://cdn-icons-png.flaticon.com/512/3001/3001764.png" class="images-icon"/>
+    <h2 class="ml-2 head-nav">Reddy's Portfolio</h2>
+    </div>
+    <div class="btn-container">
+        <button><i class="bi bi-lightbulb-fill mode" id="darkmode" onclick="changeThemeMoon()"></i>OFF</button>
+        <button><i class="bi bi-lightbulb mode" id="lightmode" onclick="changeThemesun()"></i>ON</button>
+</div>
+<div class="navbar-icon" id="toggle">
+    <i class="fa-solid fa-bars"></i>
+</div>
+    <div class="header-link menu">
+        <a class="innerLink" href="#Home">Home</a>
+        <a class="innerLink" href="#about">About</a>
+        <a class="innerLink" href="#Projects">Projects</a>
+        <a class="innerLink" href="#Contact">Contact</a>
+    </div>
+</nav>
+<div id="total-container">
+<div class="Home pt-5 pb-5" id="Home">
+    <div class="home-inner" data-aos="fade-right">
+    <h3>Hello I'm</h3>
+    <h1 class="Home-name">Reddysai Kanthuri</h1>
+    <div>
+        <a href="https://www.facebook.com/reddysai.sai.14" target="_self"><i class="fa-brands fa-facebook icon-link"></i></a>
+        <a href="https://www.linkedin.com/in/kanthuri-reddysai-621990251" target="_self"><i class="fa-brands fa-linkedin icon-link ml-3"></i></a>
+        <a href="https://www.instagram.com/kanthuri_reddy_sai/" target="_self"><i class="bi bi-instagram icon-link ml-3"></i></a>
+        <a href="https://github.com/Reddy9100" target="_self"><i class="fa-brands fa-github ml-3 icon-link"></i></a>
+        </div>
+        <div class="resumesection mt-4">
+            <a href ="https://drive.google.com/file/d/16SSe-ClGmeG4sNNDV7LRQpBmVnjC-Vb7/view?usp=share_link" target=_self><button class="btn btn-info pulse">View Resume</button></a>
+    
+    </div>
+    </div>
+    <div data-aos="fade-left">
+    <img src="https://img.freepik.com/free-vector/colourful-illustration-programmer-working_23-2148281410.jpg?w=740&t=st=1697126933~exp=1697127533~hmac=75c21d412cee7d34aa86bb1e41707982f9866ec11e10235addb5cf56ab3ecfc6" class="image-home" />   
+</div>
+</div>
+<div class="About pt-5 pb-5" id="about">
+    <div data-aos="fade-right">
+        <img src="https://img.freepik.com/premium-vector/cartoon-vector-design-man-who-thinks-provides-solutions-ideas_504901-24.jpg?w=360" class="About-image"/>
+    </div>
+    <div class="About-desc" id="aboutdesc" data-aos="fade-left">
+        <h2 class="about-head">About :-</h2>
+        <P class="text-black" id="paraabout">As a Recent Graduatee I have true potential to build scaleble webpages.And i am very eager to work in a reputed organization which will help to improve my skills for the growth of my career as well as organization.</P>
+    </div>
+</div>
+<div class="Qualification pt-5 pb-5" id="Qualification">
+    <ol class="Qualification-inner" id="Qualification1" data-aos="flip-up"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+        <h2 class="Qualification-head">Qualification :-</h2>
+        <li>Completed SSC with <span class="Qualification-span">9.7</span> CGPA in 2017</li>
+        <li>Completed Graduation with <span class="Qualification-span">8.35</span> CGPA in 2023 [IIIT Rk Valley]</li>
+    </ol>
+    <ol class="Qualification-inner2" id="Qualification2" data-aos="flip-up"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+        <h2 class="Qualification-head">Skills :-</h2>
+        <li>HTMl AND CSS</li>
+        <li>PYTHON</li>
+        <li>JAVASCRIPT</li>
+        <li>SQL</li>
+        <li>BOOTSTRAP & FLEXBOX</li>
+        <li>NODE.JS & EXPRESS.JS</li>
+        <li>REACT.JS</li>
+    </ol>
+    <ol class="Qualification-inner3" id="Qualification3" data-aos="flip-up"
+    data-aos-easing="linear"
+    data-aos-duration="1500">
+        <h2 class="Qualification-head">Certifications:-</h2>
+        <li><a href="https://certificates.ccbp.in/intensive/static-website?id=HIFIKSPCEF" target="_self">Static Website</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/dynamic-web-application?id=TSKHPFDLPB" target="_self">Dynamic Web Application</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/responsive-website?id=JMTHPCQIBN" target="_self">Responsive Website</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/programming-foundations?id=UPEXHQLGTP" target="_self">Python</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/javascript-essentials?id=PPVDPLLRBO" target="_self">javascript-essentials</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/flexbox?id=QGCQRIKMZR" target="_self">Flexbox</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/developer-foundations?id=YXTFYOFRAZ" target="_self">Github,CommandLine</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/introduction-to-databases?id=RYEIBICAYL" target="_self">SQL</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/node-js?id=LGBNELWPPV" target="_self">Node.js</a></li>
+    
+    </ol> 
+</div>
+<div class="text-center">
+    <h1 style="color: blueviolet; font-weight: 800;">Projects</h1>
+</div>
+<div class="Projects pt-5 pb-5" id="Projects" >
+    <div class="Projects-inner1 mt-5" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="https://screenshots.codesandbox.io/z7gbo/7.png" class="w-100 images-Project"/>
+        <h2>Food Munch Website</h2>
+        <a class="innerlink" href=" https://reddy9100.github.io/foodmunch/">Click Here</a>
+    </div>
+    <div class="Projects-inner1 mt-5" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps.png" class="w-100 images-Project"/>
+        <h2>Todo-List Application</h2>
+        <a class="innerlink" href=" https://reddy9100.github.io/todolist/">Click Here</a>
+    </div>
+    <div class="Projects-inner1 mt-5" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="https://ik.imagekit.io/freshman/wikipedia_Rx6fLAlIk.jpg" class="w-100 images-Project"/>
+        <h2>Wikipedia Search Application</h2>
+        <a class="innerlink" href="https://reddy9100.github.io/wikipedia/">Click Here</a>
+    </div>
+    <div class="Projects-inner1 mt-5" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="https://1.bp.blogspot.com/-k1ORhC6_IsE/XmdOqDVKX6I/AAAAAAAAAB4/3ZOOVJEoU9I4DMYXUtd1fh0efqxV-yY2gCLcBGAsYHQ/s1600/crud.jpg" class="w-100 images-Project"/>
+        <h2>CRUD-Operations On SQL Database</h2>
+        <a class="innerlink" href="https://github.com/Reddy9100/crud">Click Here</a>
+        
+    </div>
+    <div class="Projects-inner1 mt-5" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="https://img.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg?w=1060&t=st=1697128326~exp=1697128926~hmac=19331c425953e0a6d0145f9ebe55f57d39bf9f37e5eed6d6b095b463f843458c" class="w-100 images-Project"/>
+        <h2>Portfolio Website</h2>
+    </div>
+</div>
+<div class="text-center">
+    <h1 style="color: blueviolet; font-weight: 800;">Contact</h1>
+</div>
+<div class="Contact pb-5 pt-5 mt-5 mb-4" id="Contact">
+    <div data-aos="zoom-out" data-aos-duration="1500">
+        <img src="https://www.slideegg.com/image/catalog/44602-contact%20us%20ppt%20template.png" class="contact-image"/>
+    </div>
+    <div class="form-container p-4 mb-5" data-aos="zoom-in" data-aos-duration="1500">
+        <div id="form">
+            <label for="name" class="mt-2 label">Name</label>
+            <input type="text" class="form-control label2" id="name" name="name" placeholder="Your Name"/>
+            <label for="mail" class="mt-2 label">Mail</label>
+            <input type="text" id="mail" class="form-control label2" name="mail" placeholder="Your Mail"/>
+            <label for="text" class="mt-2 label">Message</label>
+            <textarea cols="35" rows="6" id="text" class="form-control label2" name="text" placeholder="Your Message"></textarea>
+            <p id="message-send"></p>
+            <div class="dbuutoncon">
+            <button class="buttonsend text-center" onclick="sendEmail()">Send <i class="bi bi-send"></i></button>
+            <h1 class="text-center mt-5" style="font-size:18px;">!!!! Thank You For Visiting !!!!</h1>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+</body>
+</html>
